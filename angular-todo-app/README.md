@@ -297,6 +297,7 @@ We have a simple button configuratio nto a new component.
 Event Logic
 Once we have our button component we need to deal with the Input data. We need to declare an event logic.
 
+## Creating an event and event emitter output
 - First of all we press out button element calling the onClick method
     ```
     <button 
@@ -350,8 +351,6 @@ Once we have our button component we need to deal with the Input data. We need t
         console.log('toggle');
     }
     ```
-
-## Creating an event and event emitter output
 
 ## Mock Tasks and Task Interface
 
