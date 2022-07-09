@@ -2,6 +2,8 @@
 Simple Angular TO-DO Web application
 
 # Index
+[0. Setup](#setup)
+
 [1. Component Structure](#component-structure)
 
 [2. Properties and Interpolation](#properties-and-interpolation)
@@ -54,7 +56,61 @@ Simple Angular TO-DO Web application
 
 
 -----------------------------------------------------
+## Setup
+Standard tooling for Angular development.
 
+- Installing Angular client
+    ```
+    npm install -g @angular/cli
+    ```
+- Init Angular Project
+    ```
+    ng new project_name
+    ```
+- Access to Angular Project
+    ```
+    cd project_name/
+    ```
+- RUn dev server
+    ```
+    ng serve
+    ```
+**Note**: At the beginning of the project's creation Angular will ask us if we want to add Angular Routing. In this case wi will choose to not install it because we will install and use at the final project's steps.
+
+We've generated a new Angular project that It will be called from a single 'index.html' file as "< app-root></ app-root >":
+
+- **~/angular-todo-app/src/index.html**
+    ```
+        <!doctype html>
+        <html lang="en">
+            <head>
+                <meta charset="utf-8">
+                <title>AngularTodoApp</title>
+                <base href="/">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="icon" type="image/x-icon" href="favicon.ico">
+            </head>
+            <body>
+                <app-root></app-root>
+            </body>
+        </html>
+    ```
+- Angular's entry point: **~/angular-todo-app/src/main.ts**
+    ```
+    import { enableProdMode } from '@angular/core';
+    import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+    import { AppModule } from './app/app.module';
+    import { environment } from './environments/environment';
+
+    if (environment.production) {
+    enableProdMode();
+    }
+
+    platformBrowserDynamic().bootstrapModule(AppModule)
+    .catch(err => console.error(err));
+
+    ``` 
 ## Component Structure
 
 ## Properties And Interpolation
