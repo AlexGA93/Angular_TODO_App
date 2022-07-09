@@ -171,6 +171,9 @@ We're going to use our app's component as an example:
 
 
 ## Properties And Interpolation
+Notify that we need to insert a logic's property in our html template as if we insert simple javascript logic.
+
+The workflow in Angular allows us to work in separate modules and call them with simple instructions.
 
 ## Global Styles
 
