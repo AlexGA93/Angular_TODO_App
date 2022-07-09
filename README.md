@@ -231,6 +231,40 @@ The next step is incorporate to our app html template the created component. We 
     }
     ```
 ## Button Component
+With the same process that the previous point we're going to create a button component to our app's container:
+
+```
+ng generate component components/button
+```
+We have a simple button configuratio nto a new component.
+
+- button.component.html
+    ```
+    <button class="btn">Click</button>
+    ```
+- button.component.ts
+    ```
+    import { 
+        Component, 
+        OnInit, 
+        Input // This component is an input so we need this module
+    } from '@angular/core';
+
+    @Component({
+        selector: 'app-button',
+        templateUrl: './button.component.html',
+        styleUrls: ['./button.component.css']
+    })
+    export class ButtonComponent implements OnInit {
+
+        constructor() { }
+
+        ngOnInit(): void {
+        }
+
+    }
+
+    ```
 
 ## Component Input Data
 
