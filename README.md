@@ -176,6 +176,7 @@ Notify that we need to insert a logic's property in our html template as if we i
 The workflow in Angular allows us to work in separate modules and call them with simple instructions.
 
 ## Global Styles
+We have applied a simple global stylesheet in our app.component.css file for this project.
 
 ## Header Component
 
