@@ -15,4 +15,10 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // method that do someting when angular calls the event emitter
+  toggleAddTask() {
+    console.log('toggle');
+    
+  }
+
 }
