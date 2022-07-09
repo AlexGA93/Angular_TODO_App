@@ -4,5 +4,9 @@
 
     <!-- Button component -->
     <!-- We've set color ad text 'props' to deal with in button.component.ts -->
-    <app-button color="green" text="Add"></app-button>
+    <app-button 
+        color="green" 
+        text="Add"
+        (btnClick)="toggleAddTask()"
+    ></app-button>
 </header>

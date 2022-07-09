@@ -1,1 +1,14 @@
-<button class="btn">Click</button>
+<!-- 
+    Inline styles in Angular  are declared as 
+    [ngStyle] and declare a css style as string
+
+    For the click event Angular declares it as (click) 
+    event and it must be linked to a method (in this
+    case we'll name it 'onClick()')
+-->
+<button 
+[ngStyle]="{'background-color': color}" 
+(click)="onClick()"
+class="btn">
+    {{text}}
+</button>
