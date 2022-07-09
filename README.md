@@ -267,6 +267,63 @@ We have a simple button configuratio nto a new component.
     ```
 
 ## Component Input Data
+Event Logic
+Once we have our button component we need to deal with the Input data. We need to declare an event logic.
+
+- First of all we press out button element calling the onClick method
+    ```
+    <button 
+        [ngStyle]="{'background-color': color}" 
+        (click)="onClick()"
+        class="btn">
+            {{text}}
+    </button>
+    ```
+- It will toggle the button.component.ts onCLick method that emits an emitter event.
+
+    ```
+    export class ButtonComponent implements OnInit {
+        // Dealing with html app-button props
+        @Input() text!: string;
+        @Input() color!: string;
+
+        //  output event
+        @Output() btnClick = new EventEmitter()
+
+        constructor() { }
+
+        ngOnInit(): void {
+        }
+
+        // onCLick method that is linked to Angular (click) event
+        
+        onClick() {
+
+            /*
+            when button is pressed (click) event calls
+            'onClick method', angular emits an output event
+            */
+            this.btnClick.emit();
+        }
+    }
+    ```
+- When the btnClick event emits angular will call to the header.component.html (btnClick)="toggleAddTask()" method
+    ```
+        <app-button 
+            color="green" 
+            text="Add"
+
+            (btnClick)="toggleAddTask()"
+
+        ></app-button>
+    ```
+- The final step is access to the toggleAddTask method that has been declared in header.component.ts
+    ```
+    toggleAddTask() {
+        console.log('toggle');
+    }
+    ```
+
 
 ## Creating an event and event emitter output
 
