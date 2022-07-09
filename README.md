@@ -112,6 +112,63 @@ We've generated a new Angular project that It will be called from a single 'inde
 
     ``` 
 ## Component Structure
+When we create an Angular component we create a new folder with a couple of files that define our project's logicand data:
+
+We're going to use our app's component as an example:
+
+- Angular Modules('app.module.ts')
+    ```
+    import { NgModule } from '@angular/core';
+    import { BrowserModule } from '@angular/platform-browser';
+
+    import { AppComponent } from './app.component';
+
+    @NgModule({
+        declarations: [
+            AppComponent
+        ],
+        imports: [
+            BrowserModule
+        ],
+        providers: [],
+        bootstrap: [AppComponent]
+    })
+    export class AppModule { }
+
+    ```
+
+- Angular components('app.component.ts')
+
+    Defines the logic for the app's father component.
+    ```
+    import { Component } from '@angular/core';
+
+    // component decoration 
+    @Component({
+        selector: 'app-root', //<--- Embedded in html file as <app-root></app-root>
+        templateUrl: './app.component.html', // Defining html template
+        styleUrls: ['./app.component.css'] // Defining stylesheet template
+    })
+    export class AppComponent {
+        // exporting a title variable in case that we want to use it in our html template
+        title: string = 'Welcome to my first Angular TO-DO App';
+    }
+
+    ```
+
+- Angular templates('app.component.html')
+    
+    Defines the HTML template associated with the father component. In this case we've substituted the vanilla code for a first-single title.
+    ```
+    <h1> Hello Angular! </h1>
+    <!-- Exported  title from app.component.ts-->
+    <h2>{{ title }}</h2>
+    ```
+    
+- Angular styles 
+    
+    Defines the base CSS stylesheet for the father component.
+
 
 ## Properties And Interpolation
 
