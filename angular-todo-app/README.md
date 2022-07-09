@@ -353,7 +353,54 @@ Once we have our button component we need to deal with the Input data. We need t
     ```
 
 ## Mock Tasks and Task Interface
+At this point we're going to create a typescript file that exports
+a task array to render in our frontend. In the future this functionallity will come from JSON-SERVER.
+- app/mock-tasks.ts
+    ```
+    import {Task} from './Tasks';
 
+    export const Tasks: Task[]= [
+        {
+            id: 1,
+            text: 'Task 1',
+            day: '',
+            reminder: true,
+        },
+        {
+            id: 2,
+            text: 'Task 2',
+            day: '',
+            reminder: true,
+        },
+        {
+            id: 3,
+            text: 'Task 3',
+            day: '',
+            reminder: true,
+        },
+        {
+            id: 4,
+            text: 'Task 4',
+            day: '',
+            reminder: true,
+        },
+        {
+            id: 5,
+            text: 'Task 5',
+            day: '',
+            reminder: true,
+        },
+    ];
+    ```
+- app/Tasks.ts
+    ```
+    export interface Task {
+        id?: number;
+        text: string;
+        day: string;
+        reminder: boolean
+    }
+    ```
 ## Tasks Component
 
 ## Looping with ngFor
