@@ -179,7 +179,57 @@ The workflow in Angular allows us to work in separate modules and call them with
 We have applied a simple global stylesheet in our app.component.css file for this project.
 
 ## Header Component
+We're going to create our first custom component called Header:
+```
+ng generate component components/header
+```
+We'va specified to Angular to create a folder called 'components' and generate the header component inside a fodler called 'header'. 
 
+The next step is incorporate to our app html template the created component. We can see in the header component's log script that it must be called as '< app-header ></ app-header >'.
+
+- app.component.html
+    ```
+    <div class="container">
+        <app-header></app-header>
+    </div>
+    ```
+- components/header/header.component.html
+    ```
+    <header>
+        <h1> {{title}} </h1>
+    </header>
+    ```
+- components/header/header.component.ts
+    ```
+    import { Component, OnInit } from '@angular/core';
+
+    @Component({
+        selector: 'app-header',
+        templateUrl: './header.component.html',
+        styleUrls: ['./header.component.css']
+    })
+    export class HeaderComponent implements OnInit {
+        //We've cut this string from app.component.ts to incorporate in the header
+        title: string = 'Angular TO-DO App';
+
+        constructor() { }
+
+        // Life cycle method
+        ngOnInit(): void {
+        }
+
+    }
+
+    ```
+- components/header/header.component.css
+    ```
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    ```
 ## Button Component
 
 ## Component Input Data
