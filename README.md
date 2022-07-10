@@ -402,6 +402,43 @@ a task array to render in our frontend. In the future this functionallity will c
     }
     ```
 ## Tasks Component
+We're going to createa tasks component:
+```
+ng generate component components/tasks
+```
+Next we need to embed this component into the app component
+- **app.component.html**
+    ```
+    <div class="container">
+        <!-- header component -->
+        <app-header></app-header>
+        <!-- tasks component -->
+        <app-tasks></app-tasks>
+    </div>
+    ```
+Once we've our new component added to app.component.html we need to import our temporal mock-tasks into the tasks.component.ts script
+    ```
+    import { Component, OnInit } from '@angular/core';
+
+    // mock-tasks
+    import {Task} from '../../Tasks';
+    import {Tasks} from '../../mock-tasks';
+
+    @Component({
+    ...
+    })
+    export class TasksComponent implements OnInit {
+
+    //imported mock-tasks and typescript interface
+    tasks: Task[] = Tasks;
+
+    constructor() { }
+
+    ngOnInit(): void {
+    }
+
+    }
+    ```
 
 ## Looping with ngFor
 
