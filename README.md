@@ -441,8 +441,19 @@ Once we've our new component added to app.component.html we need to import our t
     ```
 
 ## Looping with ngFor
+In this section we're going to apply a looping instruction with a for loop
+```
+<p 
+    *ngFor="let task of tasks"
+>
+    {{task.text}}
+</p>
+
+```
+We can see that it takes a local variable called task and iterate every tasks element. We can access to the task element content to print it in our html code.
 
 ## Task Item Component
+In this case we are goint to deal with a component that will be called in our ngFor logic to render a task item component every time that we need it.
 
 ## Angular Font Awesome Setup
 
